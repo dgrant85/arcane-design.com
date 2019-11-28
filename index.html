@@ -19,14 +19,14 @@
 		<section class="left-section">
 			<div class="slideshow">
 				<img src="images/slideshow/4.jpg" alt="slideshow">
-				<img src="images/slideshow/7.jpg" alt="slideshow">
-				<img src="images/slideshow/9.jpg" alt="slideshow">
-				<img src="images/slideshow/11.jpg" alt="slideshow">
-				<img src="images/slideshow/12.jpg" alt="slideshow">
-				<img src="images/slideshow/13.jpg" alt="slideshow">
-				<img src="images/slideshow/21.jpg" alt="slideshow">
-				<img src="images/slideshow/24.jpg" alt="slideshow">
-				<img src="images/slideshow/28.jpg" alt="slideshow">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/slideshow/7.jpg" alt="slideshow">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/slideshow/9.jpg" alt="slideshow">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/slideshow/11.jpg" alt="slideshow">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/slideshow/12.jpg" alt="slideshow">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/slideshow/13.jpg" alt="slideshow">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/slideshow/21.jpg" alt="slideshow">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/slideshow/24.jpg" alt="slideshow">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/slideshow/28.jpg" alt="slideshow">
 			</div>
 		</section>
 		
@@ -58,17 +58,26 @@
 	</div>
 
 	<script>
-		var current = 0,
-				slideshow = document.querySelector('.slideshow'),
-				slides = slideshow.querySelectorAll("img");
-
-		setInterval(function() {
-			for (var i = 0; i < slides.length; i++) {
-				slides[i].style.opacity = 0;
+		function init() {
+			var imgDefer = document.getElementsByTagName('img');
+			for (var i=0; i<imgDefer.length; i++) {
+				if (imgDefer[i].getAttribute('data-src')) {
+					imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
+				}
 			}
-			current = (current != slides.length - 1) ? current + 1 : 0;
-			slides[current].style.opacity = 1;
-		}, 3000);
+
+			var current = 0,
+					slideshow = document.querySelector('.slideshow'),
+					slides = slideshow.querySelectorAll("img");
+			setInterval(function() {
+				for (var i = 0; i < slides.length; i++) {
+					slides[i].style.opacity = 0;
+				}
+				current = (current != slides.length - 1) ? current + 1 : 0;
+				slides[current].style.opacity = 1;
+			}, 3000);
+		}
+		window.onload = init;
 	</script>
 	
 </body>
