@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Arcane Design - Bespoke crafstman and carpenter in Manchester, UK</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CPoppins:400,500" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+	
+</head>
+<body>
+	
+	<div class="main-area">
+		
+		<section class="left-section">
+			<div class="slideshow">
+				<img src="images/slideshow/4.jpg" alt="slideshow">
+				<img src="images/slideshow/7.jpg" alt="slideshow">
+				<img src="images/slideshow/9.jpg" alt="slideshow">
+				<img src="images/slideshow/11.jpg" alt="slideshow">
+				<img src="images/slideshow/12.jpg" alt="slideshow">
+				<img src="images/slideshow/13.jpg" alt="slideshow">
+				<img src="images/slideshow/21.jpg" alt="slideshow">
+				<img src="images/slideshow/24.jpg" alt="slideshow">
+				<img src="images/slideshow/28.jpg" alt="slideshow">
+			</div>
+		</section>
+		
+		
+		<section class="right-section full-height">
+		
+			<div class="logo"><img src="images/arcane-decal.png" alt="Arcane Design Logo"></div>
+			
+			<div class="display-table">
+				<div class="display-table-cell">
+					<div class="main-content">
+						<h1 class="title"><b>Arcane Design</b></h1>
+						<p class="desc">Hi, i'm Stephen Colbeck and i'm a carpenter in Manchester, UK specialising in custom furniture design etc<p>
+						<p class="desc">The website is currently being refreshed with some photos of my recent work but in interim I can be contacted via email at <a href="mailto:stephencolbeck123@gmail.com">stephencolbeck123@gmail.com</a>, or by phone on <a href="tel:07702160952‬">07702 160952‬</a></a></p>
+					</div>
+				</div>
+			</div>
+			
+			<footer>
+				&copy; 2019 Arcane Design</li>
+			</footer>
+		
+		</section>
+		
+	</div>
+
+	<div class="collage">
+		<img src="images/collage.jpg" alt="collage">
+	</div>
+
+	<script>
+		var current = 0,
+				slideshow = document.querySelector('.slideshow'),
+				slides = slideshow.querySelectorAll("img");
+
+		setInterval(function() {
+			for (var i = 0; i < slides.length; i++) {
+				slides[i].style.opacity = 0;
+			}
+			current = (current != slides.length - 1) ? current + 1 : 0;
+			slides[current].style.opacity = 1;
+		}, 3000);
+	</script>
+	
+</body>
+</html>
